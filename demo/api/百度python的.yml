@@ -1,0 +1,58 @@
+config:
+    name: testcase description
+    variables: {}
+teststeps:
+-   name: /s
+    request:
+        headers:
+            Sec-Fetch-Mode: cors
+            Sec-Fetch-Site: same-origin
+            User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36
+                (KHTML, like Gecko) Chrome/78.0.3904.87 Safari/537.36
+            X-Requested-With: XMLHttpRequest
+            is_pbs: '123'
+            is_referer: https://www.baidu.com/s?wd=123&rsv_spt=1&rsv_iqid=0xc4993afb0000182c&issp=1&f=8&rsv_bp=1&rsv_idx=2&ie=utf-8&tn=baiduhome_pg&rsv_enter=0&rsv_dl=tb&rsv_sug3=3&rsv_sug1=1&rsv_sug7=100&prefixsug=12%2526lt%253B&rsp=2&inputT=9286&rsv_sug4=9286
+            is_xhr: '1'
+        method: GET
+        params:
+            _cr1: '44545'
+            _ss: '1'
+            bs: '123'
+            clist: f9d0a569a95c3cc5
+            csor: '6'
+            f: '8'
+            f4s: '1'
+            hsug: "python makemigrations 怎么执行\tpython orm命令"
+            ie: utf-8
+            inputT: '11698'
+            isbd: '1'
+            isid: 964896c60019fedb
+            issp: '1'
+            mod: '1'
+            newi: '1'
+            oq: 12%26lt%3B
+            rqlang: cn
+            rsv_bp: '1'
+            rsv_dl: tb
+            rsv_enter: '0'
+            rsv_idx: '2'
+            rsv_iqid: '0xc4993afb0000182c'
+            rsv_pq: 964896c60019fedb
+            rsv_sid: '1467_21127_30211'
+            rsv_spt: '1'
+            rsv_sug: '2'
+            rsv_sug1: '9'
+            rsv_sug3: '10'
+            rsv_sug4: '12232'
+            rsv_sug7: '100'
+            rsv_t: 883b2kvveOe6vSuzBwfsEjUZwO31Ac2TGy0JKWBy4fskYlaRgCEu2xDDzHhDe1W70Zyk
+            tn: baiduhome_pg
+            wd: python
+        url: https://www.baidu.com/s
+    validate:
+    -   eq:
+        - status_code
+        - 200
+    -   eq:
+        - headers.Content-Type
+        - text/html;charset=utf-8

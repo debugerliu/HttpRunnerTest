@@ -1,0 +1,32 @@
+config:
+    name: testcase description
+    variables: {}
+teststeps:
+-   name: /api/v1/ucenter/login
+    request:
+        data:
+            GDSSID: WGRQemFPbWRwTE1vdXZNR1B0akxXSlB3eUVycWd1T0Q=
+            PHPSESSIONID: u84gloth0hr81ai0ldaueak4u6
+            appid: '180401'
+            deviceType: PC
+            operateSource: PC
+            password: '123456'
+            refer: https://www.gaodun.com/
+            uaToken: 121#ajdlkRAIM0QlVlyaEFmVllXYMahfKujV9lbvx0v5oO7mAeine5D5lwLYAcFfKujVlmgY+zpIDMlSA3rJEzegbIRNLaffDuQllGgYxzC5KMlVA3rnEkDIll9YOcFfKujVlmuY+zpIDM9lO3JnEGD5xQYHo6wmltXgebCD8qSm/0bvxBKGCbibYQhEU960C6WinnCVp2D0CZ0T8uBhbZsbkeIaF9QVVnV76q29pXseC60T8uVICbibCeIaFtFbbZsbnjxVp2D0CZ0T83BhbZs0Ce1iFtK0ePBonnx9Pwk0k2k4v5KLCoEb3HIXQt60C6e8lM9+lbsRD+q81GWZlDXwq+I+oj7xJsJFGTgpUl+0ZaazvPJet7CsqjRd0CYLNpzfb8U+REBKfOoZuVu1LLtSsFi2VKDBix7k8FjiuaU8RnfunxNgwf9vIXabFaM5HmIo5HtqY2tGWNnOKoBKdNjjBZ/GxTubDQvmNWOCtKzYbYF3jNM7GnThcFRMmEIDJ2Rl0QcIrZUxmc74YZqJ/9mvnUD3GeDrPhH5TDx8hB/n7zU+L8K/+hSS1GgSYiZB+0oHkmZU9ILsM6cVPFypE3Z46m9Uzpgc+htue3REefTguZ1SS8hoXxGnfVQy+nAMnJBf7Qknyd6hibUZxY87kR+gpYXiE+6xbI35E6oGRjT009XRehERLN1Zf5p+i2A9gc/HWrQ=
+            user: '15035757274'
+            webUmidToken: T32BF57A168FD1690E464EFBB3FA9774EF282850CD82A7417ABB355BA64
+        headers:
+            Content-Type: application/x-www-form-urlencoded
+            Sec-Fetch-Mode: cors
+            Sec-Fetch-Site: same-site
+            User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36
+                (KHTML, like Gecko) Chrome/78.0.3904.87 Safari/537.36
+        method: POST
+        url: https://apigateway.gaodun.com/api/v1/ucenter/login
+    validate:
+    -   eq:
+        - status_code
+        - 200
+    -   eq:
+        - headers.Content-Type
+        - text/plain; charset=utf-8

@@ -1,0 +1,43 @@
+config:
+    name: testcase description
+    variables: {}
+teststeps:
+-   name: /v1/register/pc/login/doLogin
+    request:
+        headers:
+            Content-Type: application/json;charset=UTF-8
+            Sec-Fetch-Mode: cors
+            Sec-Fetch-Site: same-origin
+            User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36
+                (KHTML, like Gecko) Chrome/78.0.3904.87 Safari/537.36
+            X-Requested-With: XMLHttpRequest
+        json:
+            loginType: '1'
+            pwdOrVerifyCode: 19950315lxw
+            uaToken: 121#Uqulk+Ac2LMlVlpaxVSrllXYMahfKujV9lbvx0v5oO7mAein4hx5lwLYAcFfKujVllgm+aAZLPhHA3rnE9jIlwXYLa+xNvo9lGuYZ7pIKM9STQrJEmD5lwLYAcfdK5jVVmgY+zP5KMlVA3rnEkDIbwLYOcMHYMoukwQVBIbvsbc9MtFPD0rOabVbbZ3glWfopCibkZ0T83Smbgi0CeIAFtZfkQWXnjxSpqLbCZeTM35O3piDkeHXmo60bZienqC9pCibCZ0T83BhbZs0keHaF9FbbZsbnjxSpXb0MqAT881abgi0CvIPB9JaCWE0YqUYpPIkC6748u/mWQG9ALyqt5c5l9G2u0JJwq3b7yURlu+FHqklauqgWYtSABmaBmpYtt1BqR10ymz6O/KTHFL2P3VPeAGCHZqy3virZjoDqChCT1+iIkeudBiok+WM9XrJ0J+CFF2aBAgzrayYwyr7nZH0wZscxmsrr5kxBn2oadH2hcLwzMr16/u8kW1lkMeEDMsGvdz27ooWdKRugZe5oKIsZM+OV125DBOZz4V5JWcqqQm/Wxh30tuvmM4zYvlI2Dt/tcsBjk5968MvfZ1X7VMzaH7+sEW4JNj+n4zuQr9EPX5MF5725BWXU2gZiiZnljqEPf1Y3ah1ILGv9fiYenpaHJ1cjSYT1snNz6NcCBqV3TOrcx+G5VxhJqeqpP0CAHcXSr1b89ba+6o2cleUZL5ccrlUqDfNSafx7kYZi25y9WTTaRFJY7EV6vp1MDVgTvDtde8HXVS+PMpYJvdMr+MEwLzxa08CaIwqPdVJ1MJ5jK+S9OwZfn4ojCcT20wIe9ZNQ0Sw8Pm1uREHW8RI/G8/Kp9oKZ6tZYsQk14trCtOtnorueGSLunOojFWtV9lTKsYhJeoZrWPsbPFJo8jMtMsfA7iiCFfQaqGcU8q7Qic2T3w/afisuJ0W3jx9NyEdrtEX/JRgEWRNleng5isIMU9DEawmN01pObpycCJiuH1uII6051f76x0mMVjOGGLj6R0d20aAchDUvU4hxLnXCYRk4RBr7CcRDnvWNxgp7cd5KIZ7Svc0GCc0VX9byjGKKasgtK/QgNn/SSkOEUdQ7+OvdEZhUR0ei2QjeaF1ZHl715PAuo9R04pWmZ3SZAYFv+GNNppyaavD7DlRlABiE4kIRpIMqqHLthGRyzB5P/BFKUoxzcW0JZ3iK2OXaWWPLYxzKPtc03dls1Y0ToyQqxgW6pdyV/nRvF28eeSmVsug1nZ3fwhhYzp+MqQNl0gQu+pD7e8ljIO6m6HUI+WctNA907MB5iqfy3MH7xC5qs1gxUo0G0/BCaZUpGct175BWMuQ0AjvF/drAQvOzA2eAt+xDejw3xjQw2hSPKK8np7Kk4kur6ndKhr2nk6ec9N8Ik7c+9mCDQuoNe4TN40Nf9e4J5H3jK6mr+zp4q0IlvQM/JAJZSs/Grv93m8gtbOjH8p4H2LbgoYhAMiaLWsKR9X00nyKWA+R86zJQ8fZy5W0vZbyalmoAqmPXqbwufJQY+VFFWK7Q/6X/jnkILJeqj8VmcRRQpVhVp0yQ4qfH9Rccb3/0EyRAnSQi3wHgJl7VK/0H4LU9bRZ0a3xQI5PbVzcbs3tY25Iq1Ooi4qyUu2QM==
+            userIdentification: '15035757274'
+            webUmidToken: T142032927FFC3D1EF2FCE1B4D290BE87B9AFA63FE2F640234765FF202F
+        method: POST
+        url: https://passport.csdn.net/v1/register/pc/login/doLogin
+    validate:
+    -   eq:
+        - status_code
+        - 200
+    -   eq:
+        - headers.Content-Type
+        - application/json;charset=utf-8
+    -   eq:
+        - content.isCheck
+        - 0
+    -   eq:
+        - content.code
+        - '0'
+    -   eq:
+        - content.message
+        - success
+    -   eq:
+        - content.status
+        - true
+    -   eq:
+        - content.username
+        - qq_40312231
